@@ -11,10 +11,10 @@ setup(
     version='1.0.0',
     description='Helpers for reporting a progress from functions by the means of callbacks.',
     long_description=long_description,
-    long_description_content_type='text/markdown',
+    long_description_content_type="text/markdown",
     license='MIT',
     url='https://github.com/peper0/progress-checkpoint',
-    author='Tomasz Łakota',
+    author='Tomasz Lakota',
     author_email='tomasz.lakota@gmail.com',
     install_requires=[
         'deprecation',

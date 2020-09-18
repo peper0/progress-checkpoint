@@ -1,2 +1,2 @@
 from .sync import *
-from . import async
+from . import asyn

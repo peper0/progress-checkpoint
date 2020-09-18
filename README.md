@@ -13,7 +13,7 @@ def time_consuming_operation(checkpoint=dummy_checkpoint):
     for i in with_progress(range(10), checkpoint):
         time.sleep(0.2)
 
-time_consuming_operation(lambda p, _: print("{:.0f}% ready".format(p*100)))
+time_consuming_operation(lambda p, _: print("{:.0f}%% ready".format(p*100)))
 ```
 
 ### Subcheckpoints
@@ -52,7 +52,7 @@ compound_time_consuming_operation(lambda p, _: print("{:.0f}% ready".format(p * 
 
 ```
 
-### Reporting using `progresssbar` package
+### Reporting using progresssbar package
 ```python
 from progress_checkpoint.console import ProgressbarCheckpoint
 
