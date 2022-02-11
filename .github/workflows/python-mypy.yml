@@ -1,0 +1,17 @@
+# This workflows will upload a Python Package using Twine when a release is created
+# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
+
+name: Check package with mypy
+
+on:
+  push
+
+jobs:
+  check-mypy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jpetrucciani/mypy-check@0.930
+        with:
+          path: "progress_checkpoint"

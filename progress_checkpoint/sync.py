@@ -1,16 +1,17 @@
-from typing import Sequence, Iterable, Union, Sized
+from typing import Sequence, Iterable, Sized, Optional, TypeVar, Generator, Tuple
 
-from deprecation import deprecated
+from .common import Checkpoint, subcheckpoints, StatusMessage
 
-from .common import Checkpoint, subcheckpoint, subcheckpoints
+T = TypeVar("T")
 
 
 # noinspection PyUnusedLocal
-def dummy_checkpoint(progress, status=None):
+def dummy_checkpoint(progress: float, status: Optional[str] = None) -> None:
     return
 
 
-def with_progress(seq: Iterable, checkpoint: Checkpoint, size=None, status=None, div=1):
+def with_progress(seq: Iterable[T], checkpoint: Checkpoint, size: Optional[int] = None, status: Optional[str] = None,
+                  div: int = 1) -> Generator[T, None, None]:
     checkpoint(0, status or '')
     if size is None:
         assert isinstance(seq, Sized), '`seq` must be a sequence unless `size` is given'
@@ -25,8 +26,9 @@ def with_progress(seq: Iterable, checkpoint: Checkpoint, size=None, status=None,
     checkpoint(1.0, status)
 
 
-def with_progress_sub(seq: Iterable, checkpoint: Checkpoint, size=None, status=None, statuses=None, status_pattern=None,
-                      weights: Iterable[float] = None, div=1):
+def with_progress_sub(seq: Iterable, checkpoint: Checkpoint, size: Optional[int] = None, status: Optional[str] = None,
+                      statuses: Optional[Iterable[StatusMessage]] = None, status_pattern: Optional[str] = None,
+                      weights: Iterable[float] = None, div: int = 1) -> Generator[Tuple[T, Checkpoint], None, None]:
     if size is None:
         assert isinstance(seq, Sized), '`seq` must be a sequence unless `size` is given'
         size = len(seq)
