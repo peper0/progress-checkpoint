@@ -1,3 +1,5 @@
+[![Check package with mypy](https://github.com/peper0/progress-checkpoint/actions/workflows/python-mypy.yml/badge.svg)](https://github.com/peper0/progress-checkpoint/actions/workflows/python-mypy.yml)
+
 # Progress-checkpoint
 
 Helpers for reporting a progress from functions by the means of callbacks.

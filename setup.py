@@ -8,7 +8,7 @@ with open("README.md") as fh:
 
 setup(
     name='progress_checkpoint',
-    version='1.0.2',
+    version='1.0.3',
     description='Helpers for reporting a progress from functions by the means of callbacks.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -23,6 +23,9 @@ setup(
     ],
     extras_require={
         'progressbar': ['progressbar'],
+    },
+    package_data={
+        'progress_checkpoint': ['py.typed'],
     },
     packages=('progress_checkpoint',),
     keywords=[
