@@ -8,7 +8,7 @@ with open("README.md") as fh:
 
 setup(
     name='progress_checkpoint',
-    version='1.0.3',
+    version='1.0.4',
     description='Helpers for reporting a progress from functions by the means of callbacks.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -34,8 +34,9 @@ setup(
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",

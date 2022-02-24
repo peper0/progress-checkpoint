@@ -1,4 +1,10 @@
-from typing import Callable, Optional, Sequence, Coroutine, Generator, Iterable, Protocol
+import sys
+from typing import Callable, Optional, Sequence, Coroutine, Generator, Iterable
+
+if sys.version_info >= (3, 8):
+    from typing import Protocol
+else:
+    Protocol = object
 
 ProgressFraction = float  # from 0 to 1
 StatusMessage = str
