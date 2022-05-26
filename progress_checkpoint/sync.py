@@ -26,7 +26,7 @@ def with_progress(seq: Iterable[T], checkpoint: Checkpoint, size: Optional[int] 
     checkpoint(1.0, status)
 
 
-def with_progress_sub(seq: Iterable, checkpoint: Checkpoint, size: Optional[int] = None, status: Optional[str] = None,
+def with_progress_sub(seq: Iterable[T], checkpoint: Checkpoint, size: Optional[int] = None, status: Optional[str] = None,
                       statuses: Optional[Iterable[StatusMessage]] = None, status_pattern: Optional[str] = None,
                       weights: Iterable[float] = None, div: int = 1) -> Generator[Tuple[T, Checkpoint], None, None]:
     if size is None:
